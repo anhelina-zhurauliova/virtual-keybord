@@ -1,9 +1,15 @@
 window.onload = () => {
   const div = document.createElement('div');
   const textarea = document.createElement('textarea');
+  const shortCut = document.createElement('div');
+  const p = document.createElement('p')
   let isCaps = false;
   document.body.appendChild(div);
   document.body.prepend(textarea);
+  shortCut.classList.add('short_cut');
+  document.body.appendChild(shortCut);
+  shortCut.appendChild(p)
+  p.innerText = 'To change language press CTRL + Alt'
   if (localStorage.lang === 'eng' || !localStorage.getItem('lang')) {
     for (let i = 0; i < values.length;) {
       const button = document.createElement('input');
