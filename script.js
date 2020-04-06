@@ -85,6 +85,8 @@ window.onload = () => {
     }
   })
   document.addEventListener('keydown', (event) => {
+    event.preventDefault();
+    let repeating = event.repeat;
     if (event.altKey && event.ctrlKey) {
       k = 0;
       input.forEach(e => { e.removeAttribute("value") });
@@ -110,14 +112,15 @@ window.onload = () => {
       textarea.innerHTML = textarea.value.slice(0, -1);
     }
     if (event.keyCode === 9) {
-      event.preventDefault();
       textarea.innerHTML += '    ';
     }
-    if (event.keyCode === 16 || event.keyCode === 20) {
+    if ((event.keyCode === 16 || event.keyCode === 20) && !repeating) {
       changeRegister();
     }
-    if (event.keyCode === 18) {
-      event.preventDefault();
+    if (event.keyCode === 37) {
+      input[59].classList.add('active')
+      textarea.selectionStart -= 1;
+      textarea.selectionEnd = textarea.selectionStart;
     }
     for (let j = 0; j < values.length;) {
       if (event.keyCode == values[j].keycode &&
@@ -128,7 +131,8 @@ window.onload = () => {
         event.keyCode !== 13 &&
         event.keyCode !== 91 &&
         event.keyCode !== 20 &&
-        event.keyCode !== 9
+        event.keyCode !== 9 &&
+        event.keyCode !== 37
       ) {
         input[j].classList.add('active')
         textarea.innerHTML += `${input[j].value}`;
