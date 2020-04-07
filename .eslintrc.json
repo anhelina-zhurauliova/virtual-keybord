@@ -3,7 +3,9 @@
     "browser": true,
     "es6": true
   },
-  "extends": ["airbnb"],
+  "extends": [
+    "airbnb"
+  ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -13,7 +15,12 @@
     "sourceType": "module"
   },
   "rules": {
-    "no-unused-vars": "warn",
-    "func-names": "off"
+    "no-unused-vars": "off",
+    "func-names": "off",
+    "dot-notation": "off",
+    "no-undef": "off",
+    "no-restricted-globals": "off",
+    "no-useless-escape": "off",
+    "eqeqeq": "off"
   }
 }

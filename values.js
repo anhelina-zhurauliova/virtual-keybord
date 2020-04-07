@@ -405,7 +405,7 @@ const values = [
     uppru: ' ',
     loweng: ' ',
     uppeng: ' ',
-    keycode: '32'
+    keycode: '32',
   },
 
   {
@@ -420,21 +420,21 @@ const values = [
     uppru: '←',
     loweng: '←',
     uppeng: '←',
-    keycode: '37'
+    keycode: '37',
   },
   {
     lowru: '↓',
     uppru: '↓',
     loweng: '↓',
     uppeng: '↓',
-    keycode: '40'
+    keycode: '40',
   },
   {
     lowru: '→',
     uppru: '→',
     loweng: '→',
     uppeng: '→',
-    keycode: '39'
+    keycode: '39',
   },
   {
     lowru: 'Ctrl',
@@ -446,48 +446,48 @@ const values = [
 
 ];
 const specialValue = {
-  'ShiftLeft': {
+  ShiftLeft: {
     name: 'ShiftLeft',
-    number: 41
+    number: 41,
   },
-  'ShiftRight': {
+  ShiftRight: {
     name: 'ShiftRight',
-    number: 53
+    number: 53,
   },
-  'ControlLeft': {
+  ControlLeft: {
     name: 'ControlLeft',
-    number: 54
+    number: 54,
   },
-  'ControlRight': {
+  ControlRight: {
     name: 'ControlRight',
-    number: 62
+    number: 62,
   },
-  'AltLeft': {
+  AltLeft: {
     name: 'AltLeft',
-    number: 56
+    number: 56,
   },
-  'AltRight': {
+  AltRight: {
     name: 'AltRight',
-    number: 58
+    number: 58,
   },
-  'Tab': {
+  Tab: {
     name: 'Tab',
-    number: 14
+    number: 14,
   },
-  'CapsLock': {
+  CapsLock: {
     name: 'CapsLock',
-    number: 28
+    number: 28,
   },
-  'Enter': {
+  Enter: {
     name: 'Enter',
-    number: 40
+    number: 40,
   },
-  'Backspace': {
+  Backspace: {
     name: 'Backspace',
-    number: 13
+    number: 13,
   },
-  'Space': {
+  Space: {
     name: 'Space',
-    number: 57
-  }
-}
+    number: 57,
+  },
+};
