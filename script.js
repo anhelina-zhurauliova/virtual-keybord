@@ -98,16 +98,30 @@ window.onload = () => {
       input.forEach((e) => { e.removeAttribute('value'); });
       if (localStorage.lang === 'eng' || !localStorage.getItem('lang')) {
         localStorage.lang = 'ru';
-        input.forEach((e) => {
-          e.setAttribute('value', values[k].lowru);
-          k += 1;
-        });
+        if (!isCaps) {
+          input.forEach((e) => {
+            e.setAttribute('value', values[k].lowru);
+            k += 1;
+          });
+        } else {
+          input.forEach((e) => {
+            e.setAttribute('value', values[k].uppru);
+            k += 1;
+          });
+        }
       } else if (localStorage.lang === 'ru') {
         localStorage.lang = 'eng';
-        input.forEach((e) => {
-          e.setAttribute('value', values[k].loweng);
-          k += 1;
-        });
+        if (!isCaps) {
+          input.forEach((e) => {
+            e.setAttribute('value', values[k].loweng);
+            k += 1;
+          });
+        } else {
+          input.forEach((e) => {
+            e.setAttribute('value', values[k].uppeng);
+            k += 1;
+          });
+        }
       }
     }
     if (event.keyCode === 13) {
