@@ -62,11 +62,9 @@ window.onload = () => {
     }
   }
   const checkEventCode = () => {
-    console.log(`${specialValue[event.code].name}` === event.code)
     if (`${specialValue[event.code].name}` === event.code) {
       input[specialValue[event.code].number].classList.add('active')
     }
-    console.log(`${specialValue[event.code].name}` === event.code)
   }
   div.addEventListener('click', (event) => {
     const { value } = event.target;
@@ -123,16 +121,25 @@ window.onload = () => {
       textarea.innerHTML = textarea.value.slice(0, -1);
     }
     if (event.keyCode === 9) {
+      event.preventDefault();
+
       textarea.innerHTML += '    ';
     }
     if ((event.keyCode === 16 || event.keyCode === 20) && !repeating) {
       changeRegister();
     }
-    // if (event.keyCode === 37) {
-    //   input[59].classList.add('active')
-    //   textarea.selectionStart -= 1;
-    //   textarea.selectionEnd = textarea.selectionStart;
-    // }
+    if (event.keyCode === 8 ||
+      event.keyCode === 17 ||
+      event.keyCode === 18 ||
+      event.keyCode === 16 ||
+      event.keyCode === 13 ||
+      event.keyCode === 91 ||
+      event.keyCode === 20 ||
+      event.keyCode === 9
+    ) {
+      event.preventDefault();
+      checkEventCode();
+    }
     for (let j = 0; j < values.length;) {
       if (event.keyCode == values[j].keycode &&
         event.keyCode !== 8 &&
@@ -144,21 +151,10 @@ window.onload = () => {
         event.keyCode !== 20 &&
         event.keyCode !== 9
       ) {
-        console.log(input[j])
         input[j].classList.add('active')
         textarea.innerHTML += `${input[j].value}`;
       }
       j += 1;
-    }
-    if (event.keyCode == 8 &&
-      event.keyCode == 17 &&
-      event.keyCode == 18 &&
-      event.keyCode == 16 &&
-      event.keyCode == 13 &&
-      event.keyCode == 91 &&
-      event.keyCode == 20 &&
-      event.keyCode == 9) {
-      checkEventCode();
     }
   });
   document.addEventListener('keyup', (event) => {
