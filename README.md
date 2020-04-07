@@ -1,6 +1,6 @@
 # virtual-keybord
 
-## Класиатура реализована на ОС Windows
+## Клавиатура реализована на ОС Windows
 
 - Задание [cсылка](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/codejam-virtual-keyboard.md)
 - Демо [ссылка](https://anhelina-zhurauliova.github.io/virtual-keybord/)
