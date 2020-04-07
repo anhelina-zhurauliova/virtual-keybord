@@ -11,6 +11,7 @@ window.onload = () => {
   shortCut.appendChild(p)
   p.innerText = 'To change language press CTRL + Alt'
   if (localStorage.lang === 'eng' || !localStorage.getItem('lang')) {
+    localStorage['lang'] = 'eng';
     for (let i = 0; i < values.length;) {
       const button = document.createElement('input');
       div.appendChild(button);
@@ -30,7 +31,7 @@ window.onload = () => {
   }
   const input = document.querySelectorAll("input");
   const changeRegister = () => {
-    input.forEach(e => { e.removeAttribute("value") });
+    input.forEach(e => e.removeAttribute("value"));
     k = 0;
     if (localStorage['lang'] === 'ru' && isCaps === false) {
       isCaps = true;
