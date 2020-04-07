@@ -1,5 +1,7 @@
 # virtual-keybord
 
+## Класиатура реализована на ОС Windows
+
 - Задание [cсылка](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/codejam-virtual-keyboard.md)
 - Демо [ссылка](https://anhelina-zhurauliova.github.io/virtual-keybord/)
 - Дата сдачи 2020-07-04 / дата дедлайна: 07.04.2020
