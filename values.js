@@ -445,3 +445,49 @@ const values = [
   },
 
 ];
+const specialValue = {
+  'ShiftLeft': {
+    name: 'ShiftLeft',
+    number: 41
+  },
+  'ShiftRight': {
+    name: 'ShiftRight',
+    number: 53
+  },
+  'ControlLeft': {
+    name: 'ControlLeft',
+    number: 54
+  },
+  'ControlRight': {
+    name: 'ControlRight',
+    number: 62
+  },
+  'AltLeft': {
+    name: 'AltLeft',
+    number: 56
+  },
+  'AltRight': {
+    name: 'AltRight',
+    number: 58
+  },
+  'Tab': {
+    name: 'Tab',
+    number: 14
+  },
+  'CapsLock': {
+    name: 'CapsLock',
+    number: 28
+  },
+  'Enter': {
+    name: 'Enter',
+    number: 40
+  },
+  'Backspace': {
+    name: 'Backspace',
+    number: 13
+  },
+  'Space': {
+    name: 'Space',
+    number: 57
+  }
+}

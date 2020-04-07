@@ -29,7 +29,7 @@ window.onload = () => {
     }
   }
   const input = document.querySelectorAll("input");
-  function changeRegister () {
+  const changeRegister = () => {
     input.forEach(e => { e.removeAttribute("value") });
     k = 0;
     if (localStorage['lang'] === 'ru' && isCaps === false) {
@@ -61,27 +61,38 @@ window.onload = () => {
       })
     }
   }
+  const checkEventCode = () => {
+    console.log(`${specialValue[event.code].name}` === event.code)
+    if (`${specialValue[event.code].name}` === event.code) {
+      input[specialValue[event.code].number].classList.add('active')
+    }
+    console.log(`${specialValue[event.code].name}` === event.code)
+  }
   div.addEventListener('click', (event) => {
-    if (event.target.value === 'Backspace') {
+    const { value } = event.target;
+    if (value === 'Backspace') {
       textarea.innerHTML = textarea.value.slice(0, -1);
     }
-    if (event.target.value !== undefined &&
-      event.target.value != 'Backspace' &&
-      event.target.value != 'Alt' &&
-      event.target.value != 'Ctrl' &&
-      event.target.value != 'Shift' &&
-      event.target.value != 'Tab' &&
-      event.target.value != 'Caps Lock' &&
-      event.target.value != 'Enter' &&
-      event.target.value != 'Win'
+    if (value !== undefined &&
+      value != 'Backspace' &&
+      value != 'Alt' &&
+      value != 'Ctrl' &&
+      value != 'Shift' &&
+      value != 'Tab' &&
+      value != 'Caps Lock' &&
+      value != 'Enter' &&
+      value != 'Win'
     ) {
-      textarea.innerHTML += event.target.value;
+      textarea.innerHTML += value;
     }
-    if (event.target.value === ' ') {
+    if (value === ' ') {
       textarea.innerHTML += ''
     }
-    if (event.target.value === 'Tab') {
+    if (value === 'Tab') {
       textarea.innerHTML += '    ';
+    }
+    if (value === 'Caps Lock') {
+      changeRegister();
     }
   })
   document.addEventListener('keydown', (event) => {
@@ -117,11 +128,11 @@ window.onload = () => {
     if ((event.keyCode === 16 || event.keyCode === 20) && !repeating) {
       changeRegister();
     }
-    if (event.keyCode === 37) {
-      input[59].classList.add('active')
-      textarea.selectionStart -= 1;
-      textarea.selectionEnd = textarea.selectionStart;
-    }
+    // if (event.keyCode === 37) {
+    //   input[59].classList.add('active')
+    //   textarea.selectionStart -= 1;
+    //   textarea.selectionEnd = textarea.selectionStart;
+    // }
     for (let j = 0; j < values.length;) {
       if (event.keyCode == values[j].keycode &&
         event.keyCode !== 8 &&
@@ -131,31 +142,23 @@ window.onload = () => {
         event.keyCode !== 13 &&
         event.keyCode !== 91 &&
         event.keyCode !== 20 &&
-        event.keyCode !== 9 &&
-        event.keyCode !== 37
+        event.keyCode !== 9
       ) {
+        console.log(input[j])
         input[j].classList.add('active')
         textarea.innerHTML += `${input[j].value}`;
       }
-      if (event.code === 'ShiftLeft') {
-        input[41].classList.add('active')
-      }
-      if (event.code === 'ShiftRight') {
-        input[53].classList.add('active')
-      }
-      if (event.code === 'ControlLeft') {
-        input[54].classList.add('active')
-      }
-      if (event.code === 'ControlRight') {
-        input[62].classList.add('active')
-      }
-      if (event.code === 'AltLeft') {
-        input[56].classList.add('active')
-      }
-      if (event.code === 'AltRight') {
-        input[58].classList.add('active')
-      }
       j += 1;
+    }
+    if (event.keyCode == 8 &&
+      event.keyCode == 17 &&
+      event.keyCode == 18 &&
+      event.keyCode == 16 &&
+      event.keyCode == 13 &&
+      event.keyCode == 91 &&
+      event.keyCode == 20 &&
+      event.keyCode == 9) {
+      checkEventCode();
     }
   });
   document.addEventListener('keyup', (event) => {
