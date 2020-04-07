@@ -1,0 +1,77 @@
+body{
+  background-image: url(./images/288179992029211.png);
+  background-size: 500px;
+}
+div {
+  font-family: "Open Sans";
+  width: 920px;
+  height: 280px;
+  margin-left: 20%;
+  margin-top: 20px;
+}
+textarea{
+  font-family: "Open Sans";
+  font-weight: 600;
+  margin-top: 80px;
+  width: 890px;
+  height: 200px;
+  margin-left: 20%;
+  resize: none;
+  background-color: #faf8e9;
+}
+input {
+  font-family: "Open Sans";
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  background-color: #fdb6ae;
+  outline: none;
+  border-color: #fae1d4  ;
+}
+input[value='Backspace'] {
+  width: 115px;
+}
+input[value='Tab'] {
+  width: 90px;
+}
+input[value='Caps Lock'] {
+  width: 100px;
+}
+input[value='Enter'] {
+  width: 127px;
+}
+input[value='Shift'] {
+  width: 113px;
+}
+input[value=' '] {
+  width: 397px;
+}
+input[value='Ctrl'] {
+  width: 66px;
+}
+.active {
+  background-color: #ffd3ce;
+  border-color:#a28987 #fae1d4 #fae1d4 #a28987;
+  border-style: solid;
+  padding: 2px;
+  /* border: 2px solid gold black black gold */
+}
+input:hover{
+  background-color: #ffd3ce;
+}
+.short_cut {
+  height: 100px;
+  width: 940px;
+  background-color: rgba(255, 253, 253, 0.8);
+}
+.short_cut > p{
+  padding: auto;
+  font-weight: 700;
+  text-align: center;
+  color:#fdb6ae;
+  opacity: 0.5;
+  font-size: 30px;
+}
